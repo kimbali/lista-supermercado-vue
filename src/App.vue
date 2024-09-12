@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       newItems: '', // Aquí se almacenarán los nuevos elementos en formato de texto
-      items: JSON.parse(sessionStorage.getItem('shoppingList')) || [] // Recupera la lista del sessionStorage
+      items: JSON.parse(localStorage.getItem('shoppingList')) || [] // Recupera la lista del sessionStorage
     }
   },
   methods: {
@@ -64,7 +64,7 @@ export default {
     },
     // Actualiza el sessionStorage cada vez que se agrega o elimina un elemento
     updateSessionStorage() {
-      sessionStorage.setItem('shoppingList', JSON.stringify(this.items))
+      localStorage.setItem('shoppingList', JSON.stringify(this.items))
     }
   }
 }
